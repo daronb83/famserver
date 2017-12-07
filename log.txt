@@ -1,0 +1,1372 @@
+Dec 07, 2017 1:13:46 PM server.Server initializeServer
+INFO: Initializing HTTP Server
+Dec 07, 2017 1:13:46 PM server.Server initializeServer
+INFO: Finished Initialization
+Dec 07, 2017 1:13:46 PM server.Server createContexts
+INFO: Creating contexts
+Dec 07, 2017 1:13:46 PM server.Server createContexts
+INFO: Finished creating contexts
+Dec 07, 2017 1:13:46 PM server.Server startServer
+INFO: Starting server
+Dec 07, 2017 1:13:46 PM server.Server startServer
+WARNING: Server started
+
+Dec 07, 2017 1:13:51 PM server.handlers.RegisterHandler handle
+INFO: Entering RegisterHandler
+Dec 07, 2017 1:13:51 PM server.handlers.Handler isPostRequest
+INFO: Request method: POST
+Dec 07, 2017 1:13:51 PM server.json.JsonDecoder decodeStream
+INFO: Decoding json stream
+Dec 07, 2017 1:13:51 PM server.handlers.Handler processRequest
+INFO: Processing request
+Dec 07, 2017 1:13:51 PM server.services.RegisterService getResponse
+INFO: getResponse: Register Service
+Dec 07, 2017 1:13:51 PM server.services.RegisterService register
+INFO: Entering RegisterService
+Dec 07, 2017 1:13:51 PM server.database.Database openConnection
+INFO: Opening database connection
+Dec 07, 2017 1:13:52 PM server.services.RegisterService uniqueUserName
+INFO: Checking username uniqueness
+Dec 07, 2017 1:13:52 PM server.database.access.UserDAO getUserByUsername
+INFO: Getting user: userName
+Dec 07, 2017 1:13:52 PM server.database.access.UserDAO getUserByUsername
+SEVERE: ResultSet closed
+java.sql.SQLException: ResultSet closed
+	at org.sqlite.core.CoreResultSet.checkOpen(CoreResultSet.java:69)
+	at org.sqlite.core.CoreResultSet.markCol(CoreResultSet.java:96)
+	at org.sqlite.jdbc3.JDBC3ResultSet.getString(JDBC3ResultSet.java:436)
+	at server.database.access.UserDAO.getUserByUsername(UserDAO.java:140)
+	at server.services.RegisterService.uniqueUserName(RegisterService.java:66)
+	at server.services.RegisterService.register(RegisterService.java:30)
+	at server.services.RegisterService.getResponse(RegisterService.java:120)
+	at server.handlers.Handler.processRequest(Handler.java:121)
+	at server.handlers.RegisterHandler.handle(RegisterHandler.java:24)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
+	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
+	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
+	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
+	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
+	at java.lang.Thread.run(Thread.java:745)
+
+Dec 07, 2017 1:13:52 PM server.services.RegisterService uniqueUserName
+INFO: getUserByUsername failed
+Dec 07, 2017 1:13:52 PM server.services.RegisterService uniqueUserName
+INFO: Username is unique
+Dec 07, 2017 1:13:52 PM server.database.access.UserDAO insert
+INFO: Inserting user: userName
+Dec 07, 2017 1:13:52 PM server.database.access.UserDAO insert
+INFO: User inserted successfully
+Dec 07, 2017 1:13:52 PM server.database.access.PersonDAO insert
+INFO: Inserting person: e862d358-0764-48a8-bb07-5aed0f16f628
+Dec 07, 2017 1:13:52 PM server.database.access.PersonDAO insert
+INFO: Person e862d358-0764-48a8-bb07-5aed0f16f628 inserted successfully
+Dec 07, 2017 1:13:52 PM server.services.RegisterService register
+INFO: New user and person inserted successfully
+Dec 07, 2017 1:13:52 PM server.services.Service generateData
+INFO: Inserting 4 generations of random data
+Dec 07, 2017 1:13:52 PM server.database.access.PersonDAO getPerson
+INFO: Getting person with ID: e862d358-0764-48a8-bb07-5aed0f16f628
+Dec 07, 2017 1:13:52 PM server.database.access.PersonDAO getPerson
+INFO: Person retrieved successfully
+Dec 07, 2017 1:13:52 PM server.generator.FamilyTreeGenerator generateTree
+INFO: Entering FamilyTreeGenerator for userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Freddie Rakes
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Bruce lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Bruce lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Bruce lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Bruce lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Bruce lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Bruce lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Bruce lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Karlene Silverman
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Agustin lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Agustin lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Venus Torgeson
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Francisco lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Francisco lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Francisco lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Francisco lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Francisco lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Francisco lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Francisco lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Jeni Dooling
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Roberto lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Roberto lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Roberto lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Roberto lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Roberto lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Roberto lastname
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Roberto lastname
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Andree Hardt
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Andree Hardt
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Paul Dooling
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Paul Dooling
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Tonya Zieman
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Tonya Zieman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Tonya Zieman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Tonya Zieman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Tonya Zieman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:52 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Tonya Zieman
+Dec 07, 2017 1:13:52 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Tonya Zieman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Tonya Zieman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Larry Torgeson
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Alene Clear
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Alene Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Alene Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Alene Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Alene Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Alene Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Alene Clear
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Cleveland Torgeson
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Alene Woosley
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Alene Woosley
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Mauricio Clear
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Leonore Nibert
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Freddie Silverman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Ching Smolen
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Ching Smolen
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Bennett Silverman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Tawny Curington
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Tawny Curington
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Lucio Silverman
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Elna Mullan
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Elna Mullan
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Errol Curington
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Errol Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Errol Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Errol Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Errol Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Errol Curington
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Errol Curington
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Maragaret Lindahl
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Daniel Smolen
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Court Record event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Christening event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Marjorie Kissee
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Lucien Smolen
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Lucien Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Lucien Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Lucien Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Lucien Smolen
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Lucien Smolen
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Danna Bleich
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Danna Bleich
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: m, userName
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Seeger Kissee
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Seeger Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Seeger Kissee
+Dec 07, 2017 1:13:53 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:53 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Seeger Kissee
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Seeger Kissee
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Seeger Kissee
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Baptism event for Seeger Kissee
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Seeger Kissee
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.PersonGenerator getRandomPerson
+INFO: getRandomPerson: f, userName
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.PersonGenerator getRandomPerson
+INFO: created Person: Julianne Smolen
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvents
+INFO: getRandomEvents for Julianne Smolen
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Birth event for Julianne Smolen
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Marriage event for Julianne Smolen
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Death event for Julianne Smolen
+Dec 07, 2017 1:13:54 PM server.json.JsonDecoder decode
+INFO: Decoding json string
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvent
+INFO: Creating Census Record event for Julianne Smolen
+Dec 07, 2017 1:13:54 PM server.generator.EventGenerator getRandomEvents
+INFO: Exiting getRandomEvents
+Dec 07, 2017 1:13:54 PM server.generator.FamilyTreeGenerator generateTree
+INFO: Finished generating persons and events
+Dec 07, 2017 1:13:54 PM server.services.Service update
+INFO: Updating e862d358-0764-48a8-bb07-5aed0f16f628
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO updateIDs
+INFO: Updating IDs firstname lastname
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO updateIDs
+INFO: IDs for firstname lastname updated successfully
+Dec 07, 2017 1:13:54 PM server.services.Service loadPersons
+INFO: Loading persons
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 00dbcab0-24a3-47b8-93eb-0db5ff54e405
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 00dbcab0-24a3-47b8-93eb-0db5ff54e405 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 9744fd13-e4cd-437d-aadf-c51b9d2a01de
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 9744fd13-e4cd-437d-aadf-c51b9d2a01de inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 2820cac4-17e8-4cdc-848d-50f62e33fa5d
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 2820cac4-17e8-4cdc-848d-50f62e33fa5d inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: bc84678f-0925-4ff1-9914-1ad84ef566ed
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person bc84678f-0925-4ff1-9914-1ad84ef566ed inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 8de53603-1a32-4fa3-8079-194841abfabc
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 8de53603-1a32-4fa3-8079-194841abfabc inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 1a9ad5c6-fd22-4f3a-b00b-10c5b9e70ef8
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 1a9ad5c6-fd22-4f3a-b00b-10c5b9e70ef8 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 13cb65b6-def7-4960-9526-24a5c3046ef2
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 13cb65b6-def7-4960-9526-24a5c3046ef2 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: a51bfa2c-4fd3-4590-b660-298e88de24d4
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person a51bfa2c-4fd3-4590-b660-298e88de24d4 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 7cedab27-e883-482a-8705-a29729eaecd5
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 7cedab27-e883-482a-8705-a29729eaecd5 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: e5060daa-a953-4d65-9f7a-98c8f5882bc9
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person e5060daa-a953-4d65-9f7a-98c8f5882bc9 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 9e1f2518-06bd-44b8-a259-4f8783163344
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 9e1f2518-06bd-44b8-a259-4f8783163344 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 933771f1-9c00-4d16-b827-4743d77b434e
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 933771f1-9c00-4d16-b827-4743d77b434e inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 1afe8206-504a-4331-9a71-67224adee736
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 1afe8206-504a-4331-9a71-67224adee736 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 412b580d-2af7-42a1-85ef-2afa222857da
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 412b580d-2af7-42a1-85ef-2afa222857da inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: b409912f-6975-41d2-b99a-5d61fd8f3c7a
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person b409912f-6975-41d2-b99a-5d61fd8f3c7a inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 30810104-6ecc-4e5b-ae49-e9629a2b1149
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 30810104-6ecc-4e5b-ae49-e9629a2b1149 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 34ae4d21-bfea-43f5-bad9-57946be9bbf7
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 34ae4d21-bfea-43f5-bad9-57946be9bbf7 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 027f895e-1937-4ebe-87b4-f63abce55d9d
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 027f895e-1937-4ebe-87b4-f63abce55d9d inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: baa3251e-4822-4071-a21d-ec2b550cc86e
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person baa3251e-4822-4071-a21d-ec2b550cc86e inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 55ec9ae1-ba43-4a70-975e-e98c50b12bee
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 55ec9ae1-ba43-4a70-975e-e98c50b12bee inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 640ccebe-a4d7-4cc6-a767-e92c67f2ef06
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 640ccebe-a4d7-4cc6-a767-e92c67f2ef06 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 5d91827a-3102-4049-8d51-93a680728eeb
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 5d91827a-3102-4049-8d51-93a680728eeb inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 674779cf-95b2-4e95-85e2-2d9e4b8d883a
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 674779cf-95b2-4e95-85e2-2d9e4b8d883a inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 8305bb08-262a-4767-a908-c7092d0fc6a2
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 8305bb08-262a-4767-a908-c7092d0fc6a2 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: bd54fbfe-186b-48da-9321-873c92ca2ac8
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person bd54fbfe-186b-48da-9321-873c92ca2ac8 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: c6012a70-9e8e-45c4-a6cf-47a2144a5cdd
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person c6012a70-9e8e-45c4-a6cf-47a2144a5cdd inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 3f39843f-920c-4db6-89bf-8c54529c05a6
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 3f39843f-920c-4db6-89bf-8c54529c05a6 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 6f63658e-aa3e-4901-b45b-76c4e770ac0f
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 6f63658e-aa3e-4901-b45b-76c4e770ac0f inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: c8aa76c7-eaf4-4caf-8eca-dd9b43055725
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person c8aa76c7-eaf4-4caf-8eca-dd9b43055725 inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: c10a4fc1-5cc4-43c1-ad3a-930fa673622f
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person c10a4fc1-5cc4-43c1-ad3a-930fa673622f inserted successfully
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Inserting person: 90521b7e-771d-4ec1-b0b3-2636dcac6f62
+Dec 07, 2017 1:13:54 PM server.database.access.PersonDAO insert
+INFO: Person 90521b7e-771d-4ec1-b0b3-2636dcac6f62 inserted successfully
+Dec 07, 2017 1:13:54 PM server.services.Service loadPersons
+INFO: Persons loaded successfully
+Dec 07, 2017 1:13:54 PM server.services.Service loadEvents
+INFO: Loading events
+Dec 07, 2017 1:13:54 PM server.services.Service loadEvents
+INFO: Events loaded successfully
+Dec 07, 2017 1:13:54 PM server.services.Service generateData
+INFO: Successfully added 31 persons and 193 events to the database
+Dec 07, 2017 1:13:54 PM server.generator.AuthTokenGenerator getAuthToken
+INFO: Generating token for 1aa10874-c9ef-4345-bed8-06fe445b06be
+Dec 07, 2017 1:13:54 PM server.services.RegisterService register
+INFO: RegisterService completed successfully
+Dec 07, 2017 1:13:54 PM server.json.JsonEncoder encodeToStream
+INFO: Encoding json stream
+Dec 07, 2017 1:13:54 PM server.json.JsonEncoder encodeToStream
+INFO: Finished encoding stream
+Dec 07, 2017 1:13:54 PM server.handlers.Handler processRequest
+INFO: Request processed successfully
+Dec 07, 2017 1:13:54 PM server.handlers.RegisterHandler handle
+INFO: Leaving RegisterHandler
+
+Dec 07, 2017 1:14:05 PM server.handlers.PersonHandler handle
+INFO: Entering PersonHandler
+Dec 07, 2017 1:14:05 PM server.handlers.Handler isGetRequest
+INFO: Request method: GET
+Dec 07, 2017 1:14:05 PM server.handlers.Handler getAuthTokenValue
+INFO: AuthToken: 25ffc14a-b3f6-4eb3-a892-787ac5e5427f
+Dec 07, 2017 1:14:05 PM server.handlers.Handler getUriParts
+INFO: URI: /person/
+Dec 07, 2017 1:14:05 PM server.handlers.Handler processRequest
+INFO: Processing request
+Dec 07, 2017 1:14:05 PM server.database.Database openConnection
+INFO: Opening database connection
+Dec 07, 2017 1:14:05 PM server.database.access.UserDAO getUserById
+INFO: Getting user: 1aa10874-c9ef-4345-bed8-06fe445b06be
+Dec 07, 2017 1:14:05 PM server.database.access.UserDAO getUserById
+INFO: User 1aa10874-c9ef-4345-bed8-06fe445b06be retrieved successfully
+Dec 07, 2017 1:14:05 PM server.database.access.PersonDAO getPersonsByUsername
+INFO: Getting persons for: userName
+Dec 07, 2017 1:14:05 PM server.database.access.PersonDAO getPersonsByUsername
+INFO: Persons retrieved successfully
+Dec 07, 2017 1:14:05 PM server.services.PeopleService getPeople
+INFO: PeopleService completed successfully
+Dec 07, 2017 1:14:05 PM server.json.JsonEncoder encodeToStream
+INFO: Encoding json stream
+Dec 07, 2017 1:14:05 PM server.json.JsonEncoder encodeToStream
+INFO: Finished encoding stream
+Dec 07, 2017 1:14:05 PM server.handlers.Handler processRequest
+INFO: Request processed successfully
+Dec 07, 2017 1:14:05 PM server.handlers.PersonHandler handle
+INFO: Leaving EventHandler
+
